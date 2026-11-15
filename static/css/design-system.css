@@ -1,0 +1,827 @@
+/* ==========================================================================
+   Text2KG Design System
+   Modern Minimal SaaS · 统一设计 Token 与基础组件
+   所有页面（Landing / Workspace / Graph）共用此文件。
+   ========================================================================== */
+
+:root {
+  /* ---- 色彩 ---- */
+  --bg-page: #f7f8fa;
+  --bg-surface: #ffffff;
+  --bg-subtle: #fbfcfe;
+  --bg-muted: #f2f4f8;
+  --bg-hover: #f5f7fa;
+
+  --text-primary: #171a21;
+  --text-secondary: #697386;
+  --text-tertiary: #929ba9;
+  --text-on-brand: #ffffff;
+
+  --brand: #3978e8;
+  --brand-hover: #2868d8;
+  --brand-active: #205cc4;
+  --brand-soft: #eef4ff;
+  --brand-border: #cfe0ff;
+  --accent: #25c6d6;
+  --accent-soft: #e8fafb;
+
+  --border: #e8ebf0;
+  --border-strong: #dce1e9;
+  --border-brand: #c9dcff;
+
+  --success: #20a46b;
+  --success-soft: #eaf8f1;
+  --warning: #e9a23b;
+  --warning-soft: #fdf5e8;
+  --error: #e35d5b;
+  --error-soft: #fdf0ef;
+
+  /* ---- 圆角 ---- */
+  --radius-card: 14px;
+  --radius-panel: 14px;
+  --radius-control: 9px;
+  --radius-sm: 6px;
+  --radius-pill: 999px;
+
+  /* ---- 阴影：轻微、柔和、低透明度 ---- */
+  --shadow-xs: 0 1px 2px rgba(23, 26, 33, 0.04);
+  --shadow-card: 0 1px 2px rgba(23, 26, 33, 0.03), 0 6px 20px rgba(23, 26, 33, 0.045);
+  --shadow-pop: 0 10px 32px rgba(23, 26, 33, 0.1), 0 2px 8px rgba(23, 26, 33, 0.05);
+  --shadow-brand: 0 2px 8px rgba(57, 120, 232, 0.18);
+
+  /* ---- 间距：8px 体系 ---- */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+
+  /* ---- 字体 ---- */
+  --font-sans: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Microsoft YaHei", "Noto Sans SC", "Hiragino Sans GB", sans-serif;
+  --font-mono: "SF Mono", ui-monospace, "JetBrains Mono", Menlo, Consolas, monospace;
+
+  --fs-display: 46px;
+  --fs-h1: 28px;
+  --fs-h2: 18px;
+  --fs-h3: 15px;
+  --fs-body: 14px;
+  --fs-sm: 13px;
+  --fs-caption: 12px;
+
+  /* ---- 动效：150–300ms，克制 ---- */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --t-fast: 150ms var(--ease);
+  --t-base: 200ms var(--ease);
+  --t-slow: 280ms var(--ease);
+
+  /* ---- 图谱分类配色（低饱和度） ---- */
+  --graph-1: #3978e8;
+  --graph-2: #35a9b6;
+  --graph-3: #8b7bd8;
+  --graph-4: #d3a04f;
+  --graph-5: #5da57e;
+  --graph-6: #cd7b87;
+  --graph-7: #6d8fb4;
+  --graph-8: #a98bbb;
+}
+
+/* --------------------------------------------------------------------------
+   Reset & base
+   -------------------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  color: var(--text-primary);
+  background: var(--bg-page);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--brand-soft);
+  color: var(--brand-active);
+}
+
+/* 统一滚动条 */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #d9dee7 transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #d9dee7;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background-clip: padding-box;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #c4cbd7;
+  background-clip: padding-box;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* --------------------------------------------------------------------------
+   图标：统一 Lucide 风格线性图标
+   -------------------------------------------------------------------------- */
+
+.icon {
+  display: inline-block;
+  flex: none;
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  vertical-align: middle;
+  pointer-events: none;
+}
+
+.icon--sm {
+  width: 15px;
+  height: 15px;
+}
+
+.icon--lg {
+  width: 22px;
+  height: 22px;
+}
+
+.icon--xl {
+  width: 28px;
+  height: 28px;
+}
+
+/* --------------------------------------------------------------------------
+   Logo
+   -------------------------------------------------------------------------- */
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.brand__mark {
+  width: 30px;
+  height: 30px;
+  flex: none;
+  border-radius: 9px;
+  background: var(--brand);
+  display: grid;
+  place-items: center;
+  color: #fff;
+  box-shadow: var(--shadow-brand);
+}
+
+.brand__mark svg {
+  width: 19px;
+  height: 19px;
+  stroke-width: 1.9;
+}
+
+.brand__name {
+  font-size: 15.5px;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.brand__tag {
+  font-size: var(--fs-caption);
+  color: var(--text-tertiary);
+  padding-left: 10px;
+  margin-left: 2px;
+  border-left: 1px solid var(--border);
+  line-height: 1.2;
+}
+
+/* --------------------------------------------------------------------------
+   Button
+   -------------------------------------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 38px;
+  padding: 0 16px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-control);
+  background: transparent;
+  font-size: var(--fs-sm);
+  font-weight: 550;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  transition: background var(--t-fast), border-color var(--t-fast),
+    color var(--t-fast), box-shadow var(--t-fast), transform var(--t-fast);
+}
+
+.btn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.btn--primary {
+  background: var(--brand);
+  color: var(--text-on-brand);
+  box-shadow: var(--shadow-brand);
+}
+
+.btn--primary:hover:not(:disabled) {
+  background: var(--brand-hover);
+  box-shadow: 0 3px 12px rgba(57, 120, 232, 0.24);
+}
+
+.btn--primary:active:not(:disabled) {
+  background: var(--brand-active);
+}
+
+.btn--secondary {
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-xs);
+}
+
+.btn--secondary:hover:not(:disabled) {
+  background: var(--bg-hover);
+  border-color: #cbd3df;
+}
+
+.btn--ghost {
+  color: var(--text-secondary);
+}
+
+.btn--ghost:hover:not(:disabled) {
+  background: var(--bg-muted);
+  color: var(--text-primary);
+}
+
+.btn--quiet {
+  color: var(--brand);
+  padding: 0 8px;
+}
+
+.btn--quiet:hover:not(:disabled) {
+  background: var(--brand-soft);
+}
+
+/* --------------------------------------------------------------------------
+   任务运行中的按钮状态
+   -------------------------------------------------------------------------- */
+
+/* 上传文档：明确的灰色禁用态（覆盖通用 opacity 变淡） */
+#empty-upload-btn:disabled {
+  opacity: 1;
+  background: #f0f2f5;
+  border-color: #e3e7ed;
+  color: #a8b0bd;
+  box-shadow: none;
+}
+
+/* 查看示例图谱：灰蓝色禁用态 */
+#sample-btn:disabled {
+  opacity: 1;
+  color: #9db0d4;
+  background: transparent;
+}
+
+/* 任务运行中的主按钮：始终是淡蓝色取消入口。
+   无论「正在处理」弹窗是否已被收起，样式完全一致。 */
+.btn--primary.is-running {
+  background: #dbe8fc;
+  border-color: #cfe0fa;
+  color: #3978e8;
+  box-shadow: none;
+}
+
+.btn--primary.is-running:hover:not(:disabled) {
+  background: #cbdcf8;
+  box-shadow: none;
+}
+
+.btn--primary.is-running:active:not(:disabled) {
+  background: #bfd3f5;
+}
+
+.btn--lg {
+  min-height: 46px;
+  padding: 0 22px;
+  font-size: var(--fs-body);
+}
+
+.btn--block {
+  width: 100%;
+}
+
+.btn--icon {
+  width: 34px;
+  height: 34px;
+  min-height: 34px;
+  padding: 0;
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+}
+
+.btn--icon:hover:not(:disabled) {
+  background: var(--bg-muted);
+  color: var(--text-primary);
+}
+
+.btn--icon.is-active {
+  background: var(--brand-soft);
+  color: var(--brand);
+}
+
+.btn__spinner {
+  display: none;
+}
+
+.btn.is-loading .btn__spinner {
+  display: inline-block;
+}
+
+.btn.is-loading .btn__icon {
+  display: none;
+}
+
+/* --------------------------------------------------------------------------
+   Spinner
+   -------------------------------------------------------------------------- */
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spin 720ms linear infinite;
+  opacity: 0.9;
+}
+
+.spinner--lg {
+  width: 22px;
+  height: 22px;
+  border-width: 2.5px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Card / Panel
+   -------------------------------------------------------------------------- */
+
+.card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+}
+
+.panel {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-panel);
+  box-shadow: var(--shadow-card);
+  min-width: 0;
+}
+
+.panel__head {
+  padding: var(--sp-5) var(--sp-5) var(--sp-4);
+  border-bottom: 1px solid var(--border);
+}
+
+.panel__title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.panel__title .icon {
+  color: var(--text-tertiary);
+}
+
+.panel__desc {
+  margin-top: 5px;
+  font-size: var(--fs-caption);
+  color: var(--text-tertiary);
+}
+
+/* --------------------------------------------------------------------------
+   Chip / Badge / Status
+   -------------------------------------------------------------------------- */
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 26px;
+  padding: 0 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: var(--bg-surface);
+  font-size: var(--fs-caption);
+  font-weight: 500;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.chip--soft {
+  background: var(--bg-muted);
+  border-color: transparent;
+}
+
+.chip--brand {
+  background: var(--brand-soft);
+  border-color: var(--brand-border);
+  color: var(--brand-hover);
+}
+
+.chip--success {
+  background: var(--success-soft);
+  border-color: transparent;
+  color: #14865a;
+}
+
+.chip--warning {
+  background: var(--warning-soft);
+  border-color: transparent;
+  color: #a8731d;
+}
+
+.chip--error {
+  background: var(--error-soft);
+  border-color: transparent;
+  color: #c34b49;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--text-tertiary);
+  flex: none;
+}
+
+.dot--brand {
+  background: var(--brand);
+}
+
+.dot--success {
+  background: var(--success);
+}
+
+.dot--warning {
+  background: var(--warning);
+}
+
+.dot--error {
+  background: var(--error);
+}
+
+.dot--pulse {
+  animation: dot-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes dot-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+/* --------------------------------------------------------------------------
+   Input / Search
+   -------------------------------------------------------------------------- */
+
+.field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 34px;
+  padding: 0 10px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-control);
+  color: var(--text-tertiary);
+  transition: border-color var(--t-fast), box-shadow var(--t-fast);
+}
+
+.field:focus-within {
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px rgba(57, 120, 232, 0.1);
+}
+
+.field input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font-size: var(--fs-caption);
+  color: var(--text-primary);
+}
+
+.field input::placeholder {
+  color: var(--text-tertiary);
+}
+
+/* --------------------------------------------------------------------------
+   Toast
+   -------------------------------------------------------------------------- */
+
+.toast-stack {
+  position: fixed;
+  top: 76px;
+  right: 24px;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: min(360px, calc(100vw - 32px));
+  pointer-events: none;
+}
+
+.toast {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  padding: 13px 14px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-control);
+  box-shadow: var(--shadow-pop);
+  pointer-events: auto;
+  animation: toast-in var(--t-slow) both;
+}
+
+.toast.is-leaving {
+  animation: toast-out 180ms var(--ease) both;
+}
+
+/* 状态仅由图标颜色区分，不使用左侧色条 */
+.toast--success .toast__icon { color: var(--success); }
+.toast--warning .toast__icon { color: var(--warning); }
+.toast--error .toast__icon { color: var(--error); }
+.toast--info .toast__icon { color: var(--brand); }
+
+.toast__icon {
+  color: var(--brand);
+  margin-top: 1px;
+}
+
+.toast__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.toast__title {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.toast__text {
+  margin-top: 2px;
+  font-size: var(--fs-caption);
+  color: var(--text-secondary);
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.toast__close {
+  width: 22px;
+  height: 22px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-tertiary);
+  display: grid;
+  place-items: center;
+}
+
+.toast__close:hover {
+  background: var(--bg-muted);
+  color: var(--text-primary);
+}
+
+@keyframes toast-in {
+  from { opacity: 0; transform: translateY(-8px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes toast-out {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(-6px); }
+}
+
+/* --------------------------------------------------------------------------
+   Modal
+   -------------------------------------------------------------------------- */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(23, 26, 33, 0.32);
+  backdrop-filter: blur(2px);
+}
+
+.modal-overlay.is-open {
+  display: flex;
+  animation: overlay-in 180ms var(--ease) both;
+}
+
+.modal {
+  width: min(380px, 100%);
+  padding: 26px 26px 22px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-pop);
+  text-align: center;
+  animation: modal-in var(--t-slow) both;
+}
+
+.modal__icon {
+  width: 44px;
+  height: 44px;
+  margin: 0 auto 16px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: var(--brand-soft);
+  color: var(--brand);
+}
+
+.modal__title {
+  font-size: var(--fs-h3);
+  font-weight: 600;
+}
+
+.modal__text {
+  margin-top: 8px;
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.modal__actions {
+  margin-top: 22px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.modal__actions--spinner {
+  margin-top: 20px;
+}
+
+.modal__actions--confirm {
+  margin-top: 12px;
+}
+
+.modal__actions--confirm .btn {
+  min-width: 104px;
+}
+
+@keyframes overlay-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modal-in {
+  from { opacity: 0; transform: scale(0.96) translateY(6px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* --------------------------------------------------------------------------
+   Utilities
+   -------------------------------------------------------------------------- */
+
+.u-hidden {
+  display: none !important;
+}
+
+.u-muted {
+  color: var(--text-tertiary);
+}
+
+.u-divider {
+  width: 1px;
+  height: 20px;
+  background: var(--border);
+  flex: none;
+}
+
+.u-fade-in {
+  animation: page-fade var(--t-slow) both;
+}
+
+@keyframes page-fade {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Reduced motion
+   -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

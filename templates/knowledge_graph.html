@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>知识图谱 - Text2KG</title>
+  <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/design-system.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/graph-view.css') }}">
+</head>
+<body>
+  <!-- 数据源保持原有路径：static/knowledge_graph.json（由 /update_graph 原子写入） -->
+  <div id="graph-root" class="gv-root"
+       data-source="{{ url_for('static', filename='knowledge_graph.json') }}"></div>
+
+  <script src="{{ url_for('static', filename='js/graph-view.js') }}"></script>
+  <script>
+    window.GraphView.create(document.getElementById('graph-root'));
+  </script>
+</body>
+</html>

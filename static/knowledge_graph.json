@@ -1,0 +1,316 @@
+{
+  "nodes": [
+    {
+      "id": "深度学习入门：基于Python的理论与实现",
+      "group": 0
+    },
+    {
+      "id": "斋藤康毅",
+      "group": 0
+    },
+    {
+      "id": "陆宇杰",
+      "group": 0
+    },
+    {
+      "id": "人民邮电出版社",
+      "group": 0
+    },
+    {
+      "id": "图灵程序设计丛书",
+      "group": 0
+    },
+    {
+      "id": "Python 3",
+      "group": 0
+    },
+    {
+      "id": "NumPy",
+      "group": 0
+    },
+    {
+      "id": "Matplotlib",
+      "group": 0
+    },
+    {
+      "id": "感知机",
+      "group": 0
+    },
+    {
+      "id": "全连接网络",
+      "group": 0
+    },
+    {
+      "id": "卷积神经网络",
+      "group": 0
+    },
+    {
+      "id": "Sigmoid",
+      "group": 0
+    },
+    {
+      "id": "ReLU",
+      "group": 0
+    },
+    {
+      "id": "均方误差",
+      "group": 0
+    },
+    {
+      "id": "交叉熵",
+      "group": 0
+    },
+    {
+      "id": "梯度下降",
+      "group": 0
+    },
+    {
+      "id": "SGD",
+      "group": 0
+    },
+    {
+      "id": "Momentum",
+      "group": 0
+    },
+    {
+      "id": "AdaGrad",
+      "group": 0
+    },
+    {
+      "id": "Adam",
+      "group": 0
+    },
+    {
+      "id": "数值微分",
+      "group": 0
+    },
+    {
+      "id": "计算图",
+      "group": 0
+    },
+    {
+      "id": "链式法则",
+      "group": 0
+    },
+    {
+      "id": "反向传播",
+      "group": 0
+    },
+    {
+      "id": "Affine",
+      "group": 0
+    },
+    {
+      "id": "Softmax-with-Loss",
+      "group": 0
+    },
+    {
+      "id": "Batch Normalization",
+      "group": 0
+    },
+    {
+      "id": "Dropout",
+      "group": 0
+    },
+    {
+      "id": "权值衰减",
+      "group": 0
+    },
+    {
+      "id": "LeNet",
+      "group": 0
+    },
+    {
+      "id": "AlexNet",
+      "group": 0
+    },
+    {
+      "id": "VGG",
+      "group": 0
+    },
+    {
+      "id": "ResNet",
+      "group": 0
+    },
+    {
+      "id": "MNIST",
+      "group": 0
+    },
+    {
+      "id": "费曼学习法",
+      "group": 0
+    }
+  ],
+  "links": [
+    {
+      "source": "深度学习入门：基于Python的理论与实现",
+      "target": "斋藤康毅",
+      "label": "作者"
+    },
+    {
+      "source": "深度学习入门：基于Python的理论与实现",
+      "target": "陆宇杰",
+      "label": "译者"
+    },
+    {
+      "source": "深度学习入门：基于Python的理论与实现",
+      "target": "人民邮电出版社",
+      "label": "出版单位"
+    },
+    {
+      "source": "深度学习入门：基于Python的理论与实现",
+      "target": "图灵程序设计丛书",
+      "label": "所属丛书"
+    },
+    {
+      "source": "深度学习入门：基于Python的理论与实现",
+      "target": "Python 3",
+      "label": "实现语言"
+    },
+    {
+      "source": "深度学习入门：基于Python的理论与实现",
+      "target": "NumPy",
+      "label": "依赖库"
+    },
+    {
+      "source": "深度学习入门：基于Python的理论与实现",
+      "target": "Matplotlib",
+      "label": "依赖库"
+    },
+    {
+      "source": "深度学习入门：基于Python的理论与实现",
+      "target": "感知机",
+      "label": "涵盖内容"
+    },
+    {
+      "source": "深度学习入门：基于Python的理论与实现",
+      "target": "全连接网络",
+      "label": "涵盖内容"
+    },
+    {
+      "source": "深度学习入门：基于Python的理论与实现",
+      "target": "卷积神经网络",
+      "label": "涵盖内容"
+    },
+    {
+      "source": "深度学习入门：基于Python的理论与实现",
+      "target": "Sigmoid",
+      "label": "涵盖内容"
+    },
+    {
+      "source": "深度学习入门：基于Python的理论与实现",
+      "target": "ReLU",
+      "label": "涵盖内容"
+    },
+    {
+      "source": "深度学习入门：基于Python的理论与实现",
+      "target": "均方误差",
+      "label": "涵盖内容"
+    },
+    {
+      "source": "深度学习入门：基于Python的理论与实现",
+      "target": "交叉熵",
+      "label": "涵盖内容"
+    },
+    {
+      "source": "深度学习入门：基于Python的理论与实现",
+      "target": "梯度下降",
+      "label": "涵盖内容"
+    },
+    {
+      "source": "深度学习入门：基于Python的理论与实现",
+      "target": "SGD",
+      "label": "涵盖内容"
+    },
+    {
+      "source": "深度学习入门：基于Python的理论与实现",
+      "target": "Momentum",
+      "label": "涵盖内容"
+    },
+    {
+      "source": "深度学习入门：基于Python的理论与实现",
+      "target": "AdaGrad",
+      "label": "涵盖内容"
+    },
+    {
+      "source": "深度学习入门：基于Python的理论与实现",
+      "target": "Adam",
+      "label": "涵盖内容"
+    },
+    {
+      "source": "深度学习入门：基于Python的理论与实现",
+      "target": "数值微分",
+      "label": "涵盖内容"
+    },
+    {
+      "source": "深度学习入门：基于Python的理论与实现",
+      "target": "计算图",
+      "label": "涵盖内容"
+    },
+    {
+      "source": "深度学习入门：基于Python的理论与实现",
+      "target": "链式法则",
+      "label": "涵盖内容"
+    },
+    {
+      "source": "深度学习入门：基于Python的理论与实现",
+      "target": "反向传播",
+      "label": "涵盖内容"
+    },
+    {
+      "source": "深度学习入门：基于Python的理论与实现",
+      "target": "Affine",
+      "label": "涵盖内容"
+    },
+    {
+      "source": "深度学习入门：基于Python的理论与实现",
+      "target": "Softmax-with-Loss",
+      "label": "涵盖内容"
+    },
+    {
+      "source": "深度学习入门：基于Python的理论与实现",
+      "target": "Batch Normalization",
+      "label": "涵盖内容"
+    },
+    {
+      "source": "深度学习入门：基于Python的理论与实现",
+      "target": "Dropout",
+      "label": "涵盖内容"
+    },
+    {
+      "source": "深度学习入门：基于Python的理论与实现",
+      "target": "权值衰减",
+      "label": "涵盖内容"
+    },
+    {
+      "source": "深度学习入门：基于Python的理论与实现",
+      "target": "LeNet",
+      "label": "涵盖内容"
+    },
+    {
+      "source": "深度学习入门：基于Python的理论与实现",
+      "target": "AlexNet",
+      "label": "涵盖内容"
+    },
+    {
+      "source": "深度学习入门：基于Python的理论与实现",
+      "target": "VGG",
+      "label": "涵盖内容"
+    },
+    {
+      "source": "深度学习入门：基于Python的理论与实现",
+      "target": "ResNet",
+      "label": "涵盖内容"
+    },
+    {
+      "source": "深度学习入门：基于Python的理论与实现",
+      "target": "MNIST",
+      "label": "实战数据集"
+    },
+    {
+      "source": "深度学习入门：基于Python的理论与实现",
+      "target": "费曼学习法",
+      "label": "核心理念"
+    }
+  ]
+}

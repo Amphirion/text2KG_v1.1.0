@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Text2KG 自动理解文档内容、抽取实体与关系，生成可交互的知识图谱，把复杂文本转化为清晰的知识网络。">
+  <title>Text2KG · 让复杂文本，转化为清晰的知识网络</title>
+  <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/design-system.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/landing.css') }}">
+</head>
+<body>
+<div class="site-wrap" id="top">
+
+  <!-- ===== 顶部导航 ===== -->
+  <header class="site-nav">
+    <div class="l-container site-nav__inner">
+      <a class="brand" href="{{ url_for('home') }}" aria-label="Text2KG 首页">
+        <span class="brand__mark"><span data-icon="logo"></span></span>
+        <span class="brand__name">Text2KG</span>
+        <span class="brand__tag">知识图谱工作台</span>
+      </a>
+
+      <nav class="site-nav__links" aria-label="主导航">
+        <a class="site-nav__link" href="#preview">产品预览</a>
+        <a class="site-nav__link" href="#features">功能特点</a>
+      </nav>
+
+      <div class="site-nav__actions">
+        <span class="site-nav__version">PDF · DOCX · TXT</span>
+        <a class="btn btn--primary" href="{{ url_for('app_interface') }}">
+          开始使用 <span data-icon="arrow-right" data-icon-size="sm"></span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="l-container">
+      <div class="hero__eyebrow">
+        <span data-icon="sparkles"></span> 文档理解 · 知识抽取
+      </div>
+
+      <h1 class="hero__title">让复杂文本，<br>转化为<span>清晰的知识网络</span>。</h1>
+
+      <p class="hero__subtitle">
+        自动理解文档内容、抽取实体与关系，并生成可交互的知识图谱。
+        把散落在文字中的信息，组织成可探索、可导出的结构化知识。
+      </p>
+
+      <div class="hero__actions">
+        <a class="btn btn--primary btn--lg" href="{{ url_for('app_interface') }}">
+          开始创建 <span data-icon="arrow-right" data-icon-size="sm"></span>
+        </a>
+        <a class="btn btn--secondary btn--lg" href="#features">
+          了解功能 <span data-icon="chevron-down" data-icon-size="sm"></span>
+        </a>
+      </div>
+
+      <div class="hero__note">
+        <span data-icon="file-text"></span> 支持 PDF、DOCX、TXT 文档解析，文本内容可直接编辑后生成图谱
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 产品视觉展示：文本 → 知识网络示意 ===== -->
+  <section class="l-container" id="preview" aria-label="产品视觉预览">
+    <div class="preview reveal">
+      <div class="preview__bar">
+        <div class="preview__title">
+          <span data-icon="network"></span> 从文本到知识网络
+        </div>
+        <span class="chip chip--soft">示意内容 · 非真实生成结果</span>
+      </div>
+
+      <div class="preview__body">
+        <!-- 输入：源文本 -->
+        <div class="preview__source">
+          <div class="preview__label">输入 / 源文本</div>
+          <div class="preview__file">
+            <span data-icon="file-text"></span>
+            <span class="preview__file-name">项目研究文档.docx</span>
+            <span class="preview__file-tag">示意</span>
+          </div>
+          <div class="preview__paragraph">
+            <p>自动完成<em>文档解析</em>与<em>语义理解</em>，定位文本中的关键叙述。</p>
+            <p>系统识别<em>实体识别</em>结果中的概念，并抽取概念之间的<em>关系抽取</em>关联。</p>
+            <p>最终将抽取结果组织为可交互的<em>知识图谱</em>，支持探索与导出。</p>
+          </div>
+        </div>
+
+        <!-- 转换指示 -->
+        <div class="preview__bridge" aria-hidden="true">
+          <span class="preview__bridge-circle"><span data-icon="arrow-right"></span></span>
+        </div>
+
+        <!-- 输出：知识图谱示意 SVG -->
+        <div class="preview__graph">
+          <div class="preview__graph-top">
+            <span class="preview__label">输出 / 知识网络</span>
+            <div class="preview__legend">
+              <span><i></i> 实体节点</span>
+              <span><i class="line"></i> 关联关系</span>
+            </div>
+          </div>
+
+          <svg class="preview-svg" viewBox="0 0 620 300" role="img" aria-label="知识图谱示意图：以知识图谱为中心，连接文本输入、文档解析、语义理解、实体识别、关系抽取与结构化输出等节点">
+            <!-- 连线 -->
+            <g stroke="#c6d2e3" stroke-width="1.2" fill="none">
+              <path d="M310 150 L110 62"/>
+              <path d="M310 150 L310 40"/>
+              <path d="M310 150 L510 62"/>
+              <path d="M310 150 L110 225"/>
+              <path d="M310 150 L510 225"/>
+              <path d="M310 150 L310 262"/>
+              <path d="M110 62 Q210 22 310 40" stroke-dasharray="3 4" opacity=".75"/>
+              <path d="M310 40 Q410 22 510 62" stroke-dasharray="3 4" opacity=".75"/>
+              <path d="M110 225 Q210 280 310 262" stroke-dasharray="3 4" opacity=".75"/>
+              <path d="M310 262 Q410 280 510 225" stroke-dasharray="3 4" opacity=".75"/>
+            </g>
+
+            <!-- 关系标签 -->
+            <g class="edge-label">
+              <text x="196" y="98">协同</text>
+              <text x="404" y="98">抽取</text>
+              <text x="196" y="196">解析</text>
+              <text x="404" y="196">关联</text>
+            </g>
+
+            <!-- 普通节点 -->
+            <g>
+              <circle cx="110" cy="62" r="19" fill="#35a9b6" fill-opacity=".12"/>
+              <circle cx="110" cy="62" r="7" fill="#35a9b6"/>
+              <text x="110" y="92" text-anchor="middle">文本输入</text>
+            </g>
+            <g>
+              <circle cx="310" cy="40" r="19" fill="#8b7bd8" fill-opacity=".12"/>
+              <circle cx="310" cy="40" r="7" fill="#8b7bd8"/>
+              <text x="310" y="70" text-anchor="middle">语义理解</text>
+            </g>
+            <g>
+              <circle cx="510" cy="62" r="19" fill="#d3a04f" fill-opacity=".12"/>
+              <circle cx="510" cy="62" r="7" fill="#d3a04f"/>
+              <text x="510" y="92" text-anchor="middle">实体识别</text>
+            </g>
+            <g>
+              <circle cx="110" cy="225" r="19" fill="#5da57e" fill-opacity=".12"/>
+              <circle cx="110" cy="225" r="7" fill="#5da57e"/>
+              <text x="110" y="255" text-anchor="middle">文档解析</text>
+            </g>
+            <g>
+              <circle cx="510" cy="225" r="19" fill="#cd7b87" fill-opacity=".12"/>
+              <circle cx="510" cy="225" r="7" fill="#cd7b87"/>
+              <text x="510" y="255" text-anchor="middle">关系抽取</text>
+            </g>
+            <g>
+              <circle cx="310" cy="262" r="19" fill="#6d8fb4" fill-opacity=".12"/>
+              <circle cx="310" cy="262" r="7" fill="#6d8fb4"/>
+              <text x="310" y="292" text-anchor="middle">结构化输出</text>
+            </g>
+
+            <!-- 中心节点 -->
+            <g>
+              <circle cx="310" cy="150" r="31" fill="#3978e8" fill-opacity=".10"/>
+              <circle cx="310" cy="150" r="20" fill="#3978e8" fill-opacity=".14"/>
+              <circle cx="310" cy="150" r="12" fill="#3978e8"/>
+              <text class="node-label--hub" x="310" y="202" text-anchor="middle">知识图谱</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <div class="preview__foot">
+        <span class="preview__disclaimer">
+          <span data-icon="info"></span> 以上为产品形态示意，节点与关系均为示例内容，非真实生成结果。
+        </span>
+        <span>示意数据 · 7 个节点 / 10 条关系</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 功能特点 ===== -->
+  <section class="features" id="features">
+    <div class="l-container">
+      <div class="features__head reveal">
+        <div class="features__eyebrow">核心能力</div>
+        <h2 class="features__title">从文本到知识网络，只需三步</h2>
+        <p class="features__desc">
+          保持流程克制而清晰：解析内容、抽取知识、可视化呈现。每一步都围绕真实文档数据展开。
+        </p>
+      </div>
+
+      <div class="features__grid">
+        <article class="feature-card reveal">
+          <div class="feature-card__icon"><span data-icon="scan-text"></span></div>
+          <div class="feature-card__index">01</div>
+          <h3 class="feature-card__title">智能文本理解</h3>
+          <p class="feature-card__desc">自动分析文档内容，识别关键信息与核心语义，生成可编辑的内容摘要。</p>
+        </article>
+
+        <article class="feature-card reveal">
+          <div class="feature-card__icon"><span data-icon="focus"></span></div>
+          <div class="feature-card__index">02</div>
+          <h3 class="feature-card__title">知识实体提取</h3>
+          <p class="feature-card__desc">从海量文本中提取实体及其关联关系，形成结构化的节点与边数据。</p>
+        </article>
+
+        <article class="feature-card reveal">
+          <div class="feature-card__icon"><span data-icon="network"></span></div>
+          <div class="feature-card__index">03</div>
+          <h3 class="feature-card__title">可视化知识网络</h3>
+          <p class="feature-card__desc">将抽象知识组织为直观、可探索的知识图谱，支持缩放、选中与导出。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="l-container site-footer__inner">
+      <div class="site-footer__left">
+        <span class="brand__mark"><span data-icon="logo"></span></span>
+        <span>© 2026 Text2KG</span>
+      </div>
+      <nav class="site-footer__links" aria-label="页脚导航">
+        <a href="{{ url_for('app_interface') }}">进入工作台</a>
+        <a href="{{ url_for('graph0') }}">查看示例图谱</a>
+        <a href="#top">返回顶部</a>
+      </nav>
+    </div>
+  </footer>
+</div>
+
+<script src="{{ url_for('static', filename='js/icons.js') }}"></script>
+<script src="{{ url_for('static', filename='js/landing.js') }}"></script>
+</body>
+</html>

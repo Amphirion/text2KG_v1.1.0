@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>示例图谱 - Text2KG</title>
+  <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/design-system.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/graph-view.css') }}">
+</head>
+<body>
+  <!-- 内置示意图谱，明确标记为示例数据，与真实生成结果区分 -->
+  <div id="graph-root" class="gv-root"
+       data-source="{{ url_for('static', filename='demo_graph.json') }}"
+       data-sample="1"></div>
+
+  <script src="{{ url_for('static', filename='js/graph-view.js') }}"></script>
+  <script>
+    window.GraphView.create(document.getElementById('graph-root'));
+  </script>
+</body>
+</html>
