@@ -184,11 +184,3 @@ python -m unittest test_app -v
 pip install waitress
 waitress-serve --host=0.0.0.0 --port=8090 app:app
 ```
-
----
-
-## 安全提示
-
-- `.env` 已在 `.gitignore` 第 13 行忽略，**不要提交到仓库**；也请不要把 Key 写进 `app.py`、README、截图或 Issue。
-- 若你是通过 ZIP / 整个文件夹（而非 `git clone`）获得本项目，且包内带有 `.env`，请先删除其中原有的 `DASHSCOPE_API_KEY` 值，换成自己的 Key；如发现疑似他人密钥，请勿使用并提醒发布者吊销轮换。
-- `uploads/`、`logs/` 是运行产物，可能包含文档原文与模型输出，公开分享前请清理。
